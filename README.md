@@ -1,5 +1,10 @@
 # simple_shedule
 
+As a beginner, I am learning UI design while experimenting with color schemes, grid layouts, and other CSS features for my scheduling app. I recently created a scheme drawing to visualize the app's layout and flow.
+
+
+
+
 # Introduction
 
 As a beginner in programming, I am excited to announce that I am embarking on a new journey to improve my skills. My goal is to create a simple scheduling app using HTML, CSS, and JavaScript.
