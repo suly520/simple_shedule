@@ -3,6 +3,7 @@
   --lgrad-col: #00af0969;
   --rgrad-col: #7dc2063a;
   --shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  --work-header-size: 
 }
 
 * {
@@ -22,59 +23,66 @@ html, body {
 .container {
   height: 100%;
   width: 100%;
-  padding: 25px 50px 25px 50px;
+  padding: 25px 10px 0px 10px;
 }
 
 .calendar {
   height: 100%;
   width: 100%;
   background-color: white;
-  border-radius: 25px;
-  padding: 1% 0px 14% 0px;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+
   box-shadow: var(--shadow);
 }
 
 .calendar-header {
-  height: 15%;
-  width: 100%;
-  border-radius: 25px;
-  margin-bottom: 1%;
-  background-color: rgb(222, 255, 196);
+  display: grid;
   align-items: center;
   text-align: center;
-  display: grid;
+  height: 5%;
+  width: 100%;
+  border-radius: 25px;
+  margin-bottom: 0.5%;
+  background-color: rgb(222, 255, 196);
   grid-template-columns: repeat(3, auto);
 }
 
 .kw-selector {
   display: grid;
-  grid-template-columns: repeat(3, auto);
   align-items: center;
+  grid-template-columns: repeat(3, auto);
 }
 
 .calendar-body {
+  align-items: center;
   height: 100%;
   width: 100%;
-  border-radius: 25px;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
   background-color: bisque;
-  align-items: center;
 }
 
 .calendar-body-header {
-  height: 15%;
-  width: 100%;
   display: grid;
+  align-items: center;
+  text-align: center;
+  height: 5%;
+  width: 100%;
   border-radius: 25px;
   margin-bottom: 1%;
   background-color: rgb(222, 255, 196);
-  align-items: center;
+  /* grid-template-columns: 28% 9% 9% 9% 9% 9% 9% 9% 9%  */
+}
+
+#work-header {
   text-align: center;
-  grid-template-columns: repeat(3, auto);
 }
 
-.week-days {
-  display: grid;
-  grid-template-columns: repeat(7, auto);
+#time-header {
+  text-align: center;
 }
 
-
+#days {
+  text-align: center;
+}
