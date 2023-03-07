@@ -3,8 +3,19 @@
   --lgrad-col: #00af0969;
   --rgrad-col: #7dc2063a;
   --shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-  --work-header-size: 
-}
+  /* caleneder body header size relevant */
+  --container-min-width: 800px;
+  --work-header-fr: 2fr;
+  --time-header-fr: 1fr;
+  --days-header-fr: 6fr;
+  --work-fr-count: 2;
+  --time-fr-count: 1;
+  --days-fr-count: 6;
+  --max-fr-count: calc(var(--work-fr-count) + var(--time-fr-count) + var(--days-fr-count));
+  --work-header-min: calc(var(--container-min-width) / var(--max-fr-count) * var(--work-fr-count));
+  --time-header-min: calc(var(--container-min-width) / var(--max-fr-count) * var(--work-fr-count));
+  --days-header-min: calc(var(--container-min-width) / var(--max-fr-count) * var(--work-fr-count));
+} 
 
 * {
   padding: 0;
@@ -22,7 +33,7 @@ html, body {
 
 .container {
   height: 100%;
-  width: 100%;
+  min-width: var(--container-min-width);
   padding: 25px 10px 0px 10px;
 }
 
@@ -32,7 +43,6 @@ html, body {
   background-color: white;
   border-top-left-radius: 25px;
   border-top-right-radius: 25px;
-
   box-shadow: var(--shadow);
 }
 
@@ -42,7 +52,7 @@ html, body {
   text-align: center;
   height: 5%;
   width: 100%;
-  border-radius: 25px;
+  border-radius: 5px;
   margin-bottom: 0.5%;
   background-color: rgb(222, 255, 196);
   grid-template-columns: repeat(3, auto);
@@ -58,8 +68,8 @@ html, body {
   align-items: center;
   height: 100%;
   width: 100%;
-  border-top-left-radius: 25px;
-  border-top-right-radius: 25px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
   background-color: bisque;
 }
 
@@ -69,10 +79,10 @@ html, body {
   text-align: center;
   height: 5%;
   width: 100%;
-  border-radius: 25px;
+  border-radius: 5px;
   margin-bottom: 1%;
   background-color: rgb(222, 255, 196);
-  /* grid-template-columns: 28% 9% 9% 9% 9% 9% 9% 9% 9%  */
+  grid-template-columns: minmax(var(--work-header-min), var(--work-header-fr)) minmax(var(--time-header-min), var(--time-header-fr))  minmax(var(--days-header-min), var(--days-header-fr));
 }
 
 #work-header {
@@ -83,6 +93,8 @@ html, body {
   text-align: center;
 }
 
-#days {
+.work-days {
+  display: grid;
   text-align: center;
+  grid-template-columns: repeat(7, 1fr);
 }
