@@ -65,19 +65,26 @@ html, body {
 }
 
 .calendar-body {
+  display: grid;
+  grid-template-areas:
+  "a a"
+  "b b";
+
   align-items: center;
   height: 100%;
   width: 100%;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
   background-color: bisque;
+ 
 }
 
 .calendar-body-header {
   display: grid;
+  grid-area: a;
   align-items: center;
   text-align: center;
-  height: 5%;
+  height: minmax(50px, 100%);
   width: 100%;
   border-radius: 5px;
   margin-bottom: 1%;
@@ -97,4 +104,9 @@ html, body {
   display: grid;
   text-align: center;
   grid-template-columns: repeat(7, 1fr);
+}
+
+.time-table {
+  display: grid;
+  grid-area: b;
 }
